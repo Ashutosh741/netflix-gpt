@@ -1,11 +1,9 @@
 import React from 'react'
+import Body from './components/Body'
 
 const App = () => {
   return (
-    <div className='text-lg font-bold text-green-800'>
-     
-    Namste Everyone !! Let's build Netflix GPT
-    </div>
+    <Body/>
   )
 }
 
