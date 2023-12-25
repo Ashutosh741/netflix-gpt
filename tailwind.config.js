@@ -1,8 +1,21 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {},
   },
-  plugins: [],
-} 
+  plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {
+        ".no-scrollbar::-webkit-scrollbar": {
+          display: "none",
+        },
+        ".no-scrollbar": {
+          "-ms-overflow-style": "none",
+          "scrollbar-width": "none",
+        },
+      };
+      addUtilities(newUtilities);
+    },
+  ],
+};

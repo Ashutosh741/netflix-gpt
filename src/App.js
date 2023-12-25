@@ -1,12 +1,13 @@
-import React from 'react'
+import { Provider } from "react-redux";
+import Body from "./components/Body";
+import appStore from "./utils/appStore";
 
-const App = () => {
+function App() {
   return (
-    <div className='text-lg font-bold text-green-800'>
-     
-    Namste Everyone !! Let's build Netflix GPT
-    </div>
-  )
+    <Provider store={appStore}>
+      <Body />
+    </Provider>
+  );
 }
 
-export default App
+export default App;
